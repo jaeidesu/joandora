@@ -1,0 +1,184 @@
+@charset "UTF-8";
+@import url(./webfont.css);
+* {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, ul, li, p{
+    margin: 0; padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+address {
+    font-style: normal;
+}
+.hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+body {
+    border: 1px solid #e7e7e7;
+    font-family: 'Pretendard-Regular';
+    margin: 8px auto 0;
+    width: 962px;
+    background: linear-gradient(#87ceeb, #fff) no-repeat;
+    /* gradient는 background-image에 대한 값임
+        background-imgae: linear-gradient() no-repeat;
+        이라고 쓰는 실수 x / no-repeat은 background-repeat에 대한 값임
+    */
+}
+
+#header {
+    /* position: relative; */
+    height: 279px; /*1px 차이 조심할것*/
+    background: url(../images/bg_header.png) no-repeat center / cover; /*슬래시 cover 쓰려면 무조건 앞에 포지션*/
+}
+#header h1 {
+    /* position: absolute; */
+    /* top: 53px; left: 23px;  */
+    padding: 35px 0 0 25px; /*제일 깔끔*/
+    color: #ff0;
+    font-size: 50px;
+}
+
+#gnb ul {
+    display: flex;
+}
+#gnb ul li {
+    width: 25%;
+}
+#gnb ul li a {
+    display: block; /*필수*/
+    background: #060;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    /* font-weight: 700; */
+}
+#gnb ul li:hover a {
+    background: #fff;
+    color: #030;
+}
+
+#content{
+    width: 740px;
+    background: #fff;
+    float: left;
+}
+#introduce {
+    padding: 28px 10px;
+}
+#introduce article {
+    margin: 20px 0 0;
+}
+#introduce article h3 {
+    margin: 13px 0 20px;
+}
+#introduce article p {
+    margin-bottom: 15px;
+} 
+
+/* #photo {
+    display: block;
+    width: 220px;
+    background: #ddffdd;
+    padding: 20px 9px 0;
+}
+#photo img {
+    width: 202px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+} */
+
+/* text-align은 인라인요소에 사용하는 것
+img: 인라인요소 > img 정렬: text-align */
+#photo {
+    width: 220px;
+    padding: 20px 0 8px;
+    text-align: center;
+    background: #dfd;
+    float: right;
+}
+#photo image {
+    border: 1px solid #ccc;
+}
+
+#footer {
+    padding: 20px 0 8px;
+    background: #061f1f;
+    color: #fff;
+    clear: both;
+    text-align: center;
+}
+
+/* 600-1023 */
+@media screen and ( max-width: 1023px ) {
+    body {
+        width: 582px;
+    }
+    #content {
+        width: auto; /*box-sizing이 안 돼 있으면 inherit보다 auto를 쓰는 게 좋음*/
+        float: none;
+    }
+    #photo {
+        width: auto;
+        float: none;
+    }
+    #photo img {
+        width: 178px;
+    }
+}
+
+/* 599 이하 */
+@media screen and ( max-width: 599px ) {
+    body {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        background: none;
+    }
+    #header {
+        height: 75px;
+        background: #061f1f;
+        margin-bottom: 4px;
+    }
+    #header h1 {
+        padding: 10px 0 0 15px;
+        font-size: 30px;
+    }
+    #gnb ul {
+        display: block;
+        padding: 14px 20px;
+        background: #fff;
+    }
+    #gnb ul li {
+        width: auto;
+    }
+    #gnb ul li a {
+        background: #fff;
+        line-height: 39px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        color: #ccc;
+        margin-bottom: 10px;
+    }
+    #gnb ul li:hover a {
+        background: #ccc;
+        color: #fff;
+    }
+    #photo {
+        background: none;
+    }
+    #photo img {
+        width: 90%;
+    }
+} 
